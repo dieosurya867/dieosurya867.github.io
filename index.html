@@ -15,9 +15,11 @@
 
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
@@ -33,6 +35,14 @@
 </head>
 
 <body>
+  <!-- Background Glow Orbs -->
+  <div class="glow-bg-container">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="glow-orb orb-4"></div>
+  </div>
+
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
   <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
@@ -41,19 +51,19 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li>
-          <a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+          <a href="#hero" class="nav-link scrollto active nav-home"><i class="bx bx-home"></i> <span>Home</span></a>
         </li>
         <li>
-          <a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
+          <a href="#about" class="nav-link scrollto nav-about"><i class="bx bx-user"></i> <span>About</span></a>
         </li>
         <li>
-          <a href="#experience" class="nav-link scrollto"><i class='bx bx-laptop'></i> <span>Experience</span></a>
+          <a href="#experience" class="nav-link scrollto nav-experience"><i class='bx bx-laptop'></i> <span>Experience</span></a>
         </li>
         <li>
-          <a href="#resume" class="nav-link scrollto"><i class=" bx bx-file-blank "></i> <span>Resume</span></a>
+          <a href="#resume" class="nav-link scrollto nav-resume"><i class=" bx bx-file-blank "></i> <span>Resume</span></a>
         </li>
         <li>
-          <a href="#portfolio" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Portofolio</span></a>
+          <a href="#portfolio" class="nav-link scrollto nav-portfolio"><i class="bx bx-server"></i> <span>Portofolio</span></a>
         </li>
       </ul>
     </nav>
@@ -70,7 +80,7 @@
         <span class="typed" data-typed-items="Fullstack Web Developer"></span>
       </p>
       <div class="social-links">
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
         <a href="https://www.instagram.com/dieosurya/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="https://www.linkedin.com/in/dieo-surya-958b67291/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
@@ -91,9 +101,11 @@
           </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile.png" class="img-fluid" alt="" height="150px" width="225px" style="margin-left: 100px;" />
+        <div class="row align-items-center">
+          <div class="col-lg-4 d-flex justify-content-center mb-4 mb-lg-0">
+            <div class="profile-img-container">
+              <img src="assets/img/profile.png" class="img-fluid profile-img" alt="Dieo Surya" />
+            </div>
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Fullstack Web Developer &amp; Android Developer.</h3>
@@ -147,224 +159,168 @@
       <h1 class="title" data-aos="fade-down">Experience</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container" data-aos="fade-right">
+          <div class="details-container container-frontend" data-aos="fade-right">
             <h2 class="experience-sub-title">Frontend Development</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>HTML</h3>
-                 
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>CSS</h3>
-               
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xml/xml-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xml/xml-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>XML</h3>
-               
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>JavaScript</h3>
-                 
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Kotlin</h3>
-                  
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Java</h3>
-                
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Bootstrap</h3>
-                  
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Jquery</h3>
-                
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-plain.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-plain.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>AJAX</h3>
-                  
+
                 </div>
               </article>
               <article>
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Taildwind CSS</h3>
-               
+
                 </div>
               </article>
             </div>
           </div>
-          <div class="details-container" data-aos="fade-left">
+          <div class="details-container container-backend" data-aos="fade-left">
             <h2 class="experience-sub-title">Backend Development</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="Experience icon"
+                  class="icon experience-icon" />
                 <div>
                   <h3>PHP</h3>
-              
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Laravel</h3>
-                 
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>MYSQL</h3>
-              
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Node JS</h3>
-               
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Express JS</h3>
-               
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>MongoDB</h3>
-                
+
                 </div>
               </article>
-               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+              <article>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Postgree</h3>
-                 
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Sqlite</h3>
-               
+
                 </div>
               </article>
               <article>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                  alt="Experience icon"
-                  class="icon experience-icon"
-                />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                  alt="Experience icon" class="icon experience-icon" />
                 <div>
                   <h3>Firebase</h3>
-               
+
                 </div>
               </article>
-              
+
             </div>
           </div>
         </div>
@@ -533,8 +489,9 @@
               <p><em>PT. Alfath Teknologi Kreatif</em></p>
               <ul>
                 <li>
-                  Pengembangan dan Pemeliharaan sistem backend untuk aplikasi web perusahaan menggunakan Laravel, JSON, MYSQL, Jquery , Dan AJAX
-                </li>              
+                  Pengembangan dan Pemeliharaan sistem backend untuk aplikasi web perusahaan menggunakan Laravel, JSON,
+                  MYSQL, Jquery , Dan AJAX
+                </li>
               </ul>
             </div>
             <!-- <div class="resume-item">
@@ -644,8 +601,8 @@
                 <h4><a href="https://mediteran.aset.id" target="_blank">Website Mediteranian</a></h4>
                 <p>Landing Page</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/mediteran.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                    title="Laravel, Jquery"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/mediteran.png" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Laravel, Jquery"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -707,4 +664,3 @@
 </body>
 
 </html>
-
