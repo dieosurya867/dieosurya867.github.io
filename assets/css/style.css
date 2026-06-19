@@ -476,9 +476,9 @@ h6 {
 
 .mobile-nav-active .mobile-nav-toggle {
   color: #fff;
-  background: var(--gradient-primary) !important;
+  background: var(--gradient-rainbow) !important;
   border-color: transparent;
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.5), 0 0 15px rgba(234, 67, 53, 0.3);
 }
 
 /*--------------------------------------------------------------
@@ -508,8 +508,11 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.12), transparent 60%),
-              radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.12), transparent 60%);
+  background:
+    radial-gradient(circle at 15% 25%, rgba(66, 133, 244, 0.14), transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(52, 168, 83, 0.12), transparent 50%),
+    radial-gradient(circle at 80% 75%, rgba(234, 67, 53, 0.12), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(251, 188, 5, 0.10), transparent 50%);
   z-index: 1;
 }
 
@@ -539,10 +542,13 @@ h6 {
 }
 
 #hero p span {
-  color: var(--secondary);
-  font-weight: 600;
-  border-bottom: 2px solid var(--secondary);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
   letter-spacing: 1px;
+  border-bottom: 2px solid transparent;
+  background-clip: text;
 }
 
 #hero .social-links {
@@ -566,10 +572,23 @@ h6 {
 
 #hero .social-links a:hover {
   color: #fff;
-  background: var(--gradient-primary);
   border-color: transparent;
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+#hero .social-links a:nth-child(1):hover {
+  background: linear-gradient(135deg, var(--google-blue), #1a73e8);
+  box-shadow: 0 5px 18px rgba(66, 133, 244, 0.5);
+}
+
+#hero .social-links a:nth-child(2):hover {
+  background: linear-gradient(135deg, var(--google-red), #d93025);
+  box-shadow: 0 5px 18px rgba(234, 67, 53, 0.5);
+}
+
+#hero .social-links a:nth-child(3):hover {
+  background: linear-gradient(135deg, var(--google-green), #1e8e3e);
+  box-shadow: 0 5px 18px rgba(52, 168, 83, 0.5);
 }
 
 @media (max-width: 992px) {
@@ -620,11 +639,19 @@ section {
   display: block;
   width: 60px;
   height: 4px;
-  background: var(--gradient-primary);
+  background: var(--gradient-rainbow);
+  background-size: 200% 200%;
   border-radius: 2px;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+  animation: rainbowShift 4s ease infinite;
+}
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .section-title p {
@@ -890,14 +917,28 @@ article h3 {
   margin-top: 30px;
   margin-bottom: 25px;
   color: #fff;
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--google-blue);
   padding-left: 15px;
+}
+
+/* Alternate resume-title accent colors per section */
+.resume .col-lg-6:first-child .resume-title:first-of-type {
+  border-left-color: var(--google-blue);
+}
+.resume .col-lg-6:first-child .resume-title:last-of-type {
+  border-left-color: var(--google-yellow);
+}
+.resume .col-lg-6:last-child .resume-title:first-of-type {
+  border-left-color: var(--google-red);
+}
+.resume .col-lg-6:last-child .resume-title:last-of-type {
+  border-left-color: var(--google-green);
 }
 
 .resume .resume-item {
   padding: 0 0 30px 25px;
   margin-top: -2px;
-  border-left: 2px dashed rgba(99, 102, 241, 0.3);
+  border-left: 2px dashed rgba(66, 133, 244, 0.3);
   position: relative;
 }
 
@@ -915,16 +956,26 @@ article h3 {
   left: -9px;
   top: 4px;
   background: var(--bg-dark);
-  border: 3px solid var(--primary);
-  box-shadow: 0 0 10px var(--primary);
+  border: 3px solid var(--google-blue);
+  box-shadow: 0 0 10px rgba(66, 133, 244, 0.5);
   transition: var(--transition);
 }
 
+/* Cycle timeline dot colors per item: Blue, Green, Yellow, Red */
+.resume .resume-item:nth-child(4n+1)::before { border-color: var(--google-blue); box-shadow: 0 0 10px rgba(66,133,244,0.5); }
+.resume .resume-item:nth-child(4n+2)::before { border-color: var(--google-green); box-shadow: 0 0 10px rgba(52,168,83,0.5); }
+.resume .resume-item:nth-child(4n+3)::before { border-color: var(--google-yellow); box-shadow: 0 0 10px rgba(251,188,5,0.5); }
+.resume .resume-item:nth-child(4n+4)::before { border-color: var(--google-red); box-shadow: 0 0 10px rgba(234,67,53,0.5); }
+
 .resume .resume-item:hover::before {
-  background: var(--primary);
-  box-shadow: 0 0 18px var(--primary);
+  background: var(--google-blue);
+  box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
   transform: scale(1.2);
 }
+.resume .resume-item:nth-child(4n+1):hover::before { background: var(--google-blue); box-shadow: 0 0 20px rgba(66,133,244,0.8); }
+.resume .resume-item:nth-child(4n+2):hover::before { background: var(--google-green); box-shadow: 0 0 20px rgba(52,168,83,0.8); }
+.resume .resume-item:nth-child(4n+3):hover::before { background: var(--google-yellow); box-shadow: 0 0 20px rgba(251,188,5,0.8); }
+.resume .resume-item:nth-child(4n+4):hover::before { background: var(--google-red); box-shadow: 0 0 20px rgba(234,67,53,0.8); }
 
 .resume .resume-item h4 {
   font-family: var(--font-heading);
@@ -937,15 +988,21 @@ article h3 {
 .resume .resume-item h5 {
   font-family: var(--font-mono);
   font-size: 14px;
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(66, 133, 244, 0.1);
+  color: var(--google-blue);
+  border: 1px solid rgba(66, 133, 244, 0.25);
   padding: 4px 12px;
   display: inline-block;
   font-weight: 600;
   border-radius: 50px;
   margin-bottom: 12px;
 }
+
+/* Cycle date badge colors per item */
+.resume .resume-item:nth-child(4n+1) h5 { color: var(--google-blue); background: rgba(66,133,244,0.1); border-color: rgba(66,133,244,0.25); }
+.resume .resume-item:nth-child(4n+2) h5 { color: var(--google-green); background: rgba(52,168,83,0.1); border-color: rgba(52,168,83,0.25); }
+.resume .resume-item:nth-child(4n+3) h5 { color: var(--google-yellow); background: rgba(251,188,5,0.1); border-color: rgba(251,188,5,0.25); }
+.resume .resume-item:nth-child(4n+4) h5 { color: var(--google-red); background: rgba(234,67,53,0.1); border-color: rgba(234,67,53,0.25); }
 
 .resume .resume-item p {
   color: var(--text-secondary);
@@ -1005,7 +1062,8 @@ article h3 {
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  background: var(--gradient-primary);
+  background: var(--gradient-rainbow);
+  box-shadow: 0 0 18px rgba(66, 133, 244, 0.35);
 }
 
 .portfolio .portfolio-item {
@@ -1106,13 +1164,29 @@ article h3 {
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px var(--primary);
+  box-shadow: 0 0 18px rgba(66, 133, 244, 0.6);
 }
 
-.portfolio .portfolio-wrap:hover {
+/* Cycle portfolio card hover accent colors */
+.portfolio .portfolio-item:nth-child(4n+1) .portfolio-wrap:hover {
   transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.25);
+  border-color: var(--google-blue);
+  box-shadow: 0 15px 30px rgba(66, 133, 244, 0.3);
+}
+.portfolio .portfolio-item:nth-child(4n+2) .portfolio-wrap:hover {
+  transform: translateY(-8px);
+  border-color: var(--google-red);
+  box-shadow: 0 15px 30px rgba(234, 67, 53, 0.3);
+}
+.portfolio .portfolio-item:nth-child(4n+3) .portfolio-wrap:hover {
+  transform: translateY(-8px);
+  border-color: var(--google-yellow);
+  box-shadow: 0 15px 30px rgba(251, 188, 5, 0.3);
+}
+.portfolio .portfolio-item:nth-child(4n+4) .portfolio-wrap:hover {
+  transform: translateY(-8px);
+  border-color: var(--google-green);
+  box-shadow: 0 15px 30px rgba(52, 168, 83, 0.3);
 }
 
 .portfolio .portfolio-wrap:hover img {
