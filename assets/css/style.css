@@ -67,6 +67,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 a {
@@ -116,6 +117,7 @@ h6 {
   overflow: hidden;
   background-color: var(--bg-dark);
   pointer-events: none;
+  transition: background-color 0.4s ease;
 }
 
 .glow-bg-container::before {
@@ -228,6 +230,348 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
+
+/*--------------------------------------------------------------
+# Theme Toggle Button
+--------------------------------------------------------------*/
+.theme-toggle {
+  position: fixed;
+  right: 15px;
+  bottom: 70px;
+  z-index: 996;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--gradient-rainbow);
+  border-color: transparent;
+  transform: translateY(-3px) rotate(15deg);
+  box-shadow: 0 0 20px rgba(66, 133, 244, 0.4);
+}
+
+.theme-toggle-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-icon-dark,
+.theme-icon-light {
+  position: absolute;
+  font-size: 18px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark mode (default): show moon, hide sun */
+.theme-icon-dark {
+  color: #a5b4fc;
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-icon-light {
+  color: var(--google-yellow);
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+/* Light mode: hide moon, show sun */
+body.light-mode .theme-icon-dark {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+body.light-mode .theme-icon-light {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+body.light-mode .theme-toggle {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/*--------------------------------------------------------------
+# Light Mode Overrides
+--------------------------------------------------------------*/
+body.light-mode {
+  background-color: #f0f2f8;
+  color: #1a1c2e;
+}
+
+body.light-mode .glow-bg-container {
+  background-color: #f0f2f8;
+}
+
+body.light-mode .glow-bg-container::before {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+body.light-mode .glow-orb {
+  mix-blend-mode: multiply;
+  opacity: 0.07;
+}
+
+/* Light mode — text */
+body.light-mode,
+body.light-mode p,
+body.light-mode .about .content ul li {
+  color: #374151;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+  color: #111827;
+}
+
+/* Light mode — header/nav */
+body.light-mode #header {
+  background: transparent;
+}
+
+@media (max-width: 991px) {
+  body.light-mode #header {
+    background: rgba(240, 242, 248, 0.95);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+body.light-mode .nav-menu a,
+body.light-mode .nav-menu a:focus {
+  color: #374151;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .nav-menu a span,
+body.light-mode .nav-menu a:focus span {
+  color: #374151;
+}
+
+body.light-mode .nav-menu a:hover,
+body.light-mode .nav-menu .active,
+body.light-mode .nav-menu li:hover > a {
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+body.light-mode .nav-menu a:hover i,
+body.light-mode .nav-menu .active i,
+body.light-mode .nav-menu li:hover > a i {
+  color: #fff !important;
+}
+
+body.light-mode .nav-menu a:hover span,
+body.light-mode .nav-menu .active span,
+body.light-mode .nav-menu li:hover > a span {
+  color: #fff !important;
+}
+
+/* Light mode — hero */
+body.light-mode #hero {
+  background: linear-gradient(to right, rgba(240, 242, 248, 0.97), rgba(240, 242, 248, 0.80));
+}
+
+body.light-mode #hero p {
+  color: #4b5563;
+}
+
+body.light-mode #hero .social-links a {
+  color: #4b5563;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode — cards */
+body.light-mode .details-container,
+body.light-mode .portfolio .portfolio-wrap,
+body.light-mode .portfolio-details .portfolio-info {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode article {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+body.light-mode article h3 {
+  color: #1f2937;
+}
+
+body.light-mode article:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Light mode — section titles */
+body.light-mode .section-title h2,
+body.light-mode #experience .title {
+  color: #111827;
+}
+
+body.light-mode .section-title p {
+  color: #6b7280;
+}
+
+/* Light mode — experience sub-titles */
+body.light-mode .experience-sub-title {
+  color: #111827;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode — resume */
+body.light-mode .resume .resume-title {
+  color: #111827;
+}
+
+body.light-mode .resume .resume-item {
+  border-left-color: rgba(66, 133, 244, 0.35);
+}
+
+body.light-mode .resume .resume-item h4 {
+  color: #111827;
+}
+
+body.light-mode .resume .resume-item p {
+  color: #4b5563;
+}
+
+body.light-mode .resume .resume-item p em {
+  color: #1f2937;
+}
+
+body.light-mode .resume .resume-item ul {
+  color: #4b5563;
+}
+
+body.light-mode .resume .resume-item::before {
+  background: #f0f2f8;
+}
+
+body.light-mode .resume .resume-item:nth-child(4n+3) h5 {
+  color: #b06000;
+  background: rgba(251, 188, 5, 0.12);
+  border-color: rgba(251, 188, 5, 0.35);
+}
+
+/* Light mode — portfolio */
+body.light-mode .portfolio #portfolio-flters {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .portfolio #portfolio-flters li {
+  color: #4b5563;
+}
+
+body.light-mode .portfolio #portfolio-flters li.filter-active,
+body.light-mode .portfolio #portfolio-flters li:hover {
+  color: #fff;
+}
+
+body.light-mode .portfolio .portfolio-wrap::before {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.85));
+}
+
+body.light-mode .portfolio .portfolio-wrap .portfolio-info h4,
+body.light-mode .portfolio .portfolio-wrap .portfolio-info h4 a {
+  color: #111827;
+}
+
+body.light-mode .portfolio .portfolio-wrap .portfolio-info p {
+  color: #4b5563;
+}
+
+/* Light mode — portfolio details page */
+body.light-mode .portfolio-details .portfolio-info h3 {
+  color: #111827;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .portfolio-details .portfolio-info ul li strong {
+  color: #111827;
+}
+
+body.light-mode .portfolio-details .portfolio-description h2 {
+  color: #111827;
+}
+
+body.light-mode .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+body.light-mode .profile-img {
+  background: #e2e8f0;
+}
+
+/* Light mode — about info list */
+body.light-mode .about .content ul strong {
+  color: #111827;
+}
+
+body.light-mode .about .content h3 {
+  color: #111827;
+}
+
+/* Light mode — scrollbar */
+body.light-mode ::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Light mode — preloader */
+body.light-mode #preloader {
+  background: #f0f2f8;
+}
+
+/* Light mode — mobile toggle */
+body.light-mode .mobile-nav-toggle {
+  background: rgba(240, 242, 248, 0.9) !important;
+  color: #1f2937;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode.mobile-nav-active .mobile-nav-toggle {
+  color: #fff;
+  background: var(--gradient-rainbow) !important;
+  border-color: transparent;
+}
+
+
 
 /*--------------------------------------------------------------
 # Preloader
