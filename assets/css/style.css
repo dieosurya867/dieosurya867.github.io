@@ -93,13 +93,16 @@ h6 {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-dark);
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
@@ -127,7 +130,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 45px 45px;
@@ -186,9 +189,11 @@ h6 {
   0% {
     transform: translate(0, 0) scale(1);
   }
+
   50% {
     transform: translate(50px, -70px) scale(1.1);
   }
+
   100% {
     transform: translate(-30px, 50px) scale(0.9);
   }
@@ -373,20 +378,20 @@ body.light-mode .nav-menu a:focus span {
 
 body.light-mode .nav-menu a:hover,
 body.light-mode .nav-menu .active,
-body.light-mode .nav-menu li:hover > a {
+body.light-mode .nav-menu li:hover>a {
   color: #fff !important;
   border-color: transparent !important;
 }
 
 body.light-mode .nav-menu a:hover i,
 body.light-mode .nav-menu .active i,
-body.light-mode .nav-menu li:hover > a i {
+body.light-mode .nav-menu li:hover>a i {
   color: #fff !important;
 }
 
 body.light-mode .nav-menu a:hover span,
 body.light-mode .nav-menu .active span,
-body.light-mode .nav-menu li:hover > a span {
+body.light-mode .nav-menu li:hover>a span {
   color: #fff !important;
 }
 
@@ -605,6 +610,7 @@ body.light-mode.mobile-nav-active .mobile-nav-toggle {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -664,7 +670,7 @@ body.light-mode.mobile-nav-active .mobile-nav-toggle {
   list-style: none;
 }
 
-.nav-menu > ul > li {
+.nav-menu>ul>li {
   position: relative;
   white-space: nowrap;
 }
@@ -703,6 +709,7 @@ body.light-mode.mobile-nav-active .mobile-nav-toggle {
 }
 
 @media (min-width: 992px) {
+
   .nav-menu a,
   .nav-menu a:focus {
     width: 56px;
@@ -718,50 +725,51 @@ body.light-mode.mobile-nav-active .mobile-nav-toggle {
 .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
-.nav-menu li:hover > a {
+.nav-menu li:hover>a {
   color: #fff;
   border-color: transparent;
 }
 
 /* Individual Google Color Mappings for Nav Items */
 .nav-menu a.nav-home:hover,
-.nav-menu li:hover > a.nav-home,
+.nav-menu li:hover>a.nav-home,
 .nav-menu a.nav-home.active {
   background: linear-gradient(135deg, var(--google-blue), #1a73e8) !important;
   box-shadow: 0 0 20px rgba(66, 133, 244, 0.55) !important;
 }
 
 .nav-menu a.nav-about:hover,
-.nav-menu li:hover > a.nav-about,
+.nav-menu li:hover>a.nav-about,
 .nav-menu a.nav-about.active {
   background: linear-gradient(135deg, var(--google-green), #1e8e3e) !important;
   box-shadow: 0 0 20px rgba(52, 168, 83, 0.55) !important;
 }
 
 .nav-menu a.nav-experience:hover,
-.nav-menu li:hover > a.nav-experience,
+.nav-menu li:hover>a.nav-experience,
 .nav-menu a.nav-experience.active {
   background: linear-gradient(135deg, var(--google-yellow), #f29900) !important;
   box-shadow: 0 0 20px rgba(251, 188, 5, 0.55) !important;
   color: #020617 !important;
 }
+
 .nav-menu a.nav-experience:hover span,
 .nav-menu a.nav-experience.active span,
 .nav-menu a.nav-experience:hover i,
 .nav-menu a.nav-experience.active i,
-.nav-menu li:hover > a.nav-experience i {
+.nav-menu li:hover>a.nav-experience i {
   color: #020617 !important;
 }
 
 .nav-menu a.nav-resume:hover,
-.nav-menu li:hover > a.nav-resume,
+.nav-menu li:hover>a.nav-resume,
 .nav-menu a.nav-resume.active {
   background: linear-gradient(135deg, var(--google-red), #d93025) !important;
   box-shadow: 0 0 20px rgba(234, 67, 53, 0.55) !important;
 }
 
 .nav-menu a.nav-portfolio:hover,
-.nav-menu li:hover > a.nav-portfolio,
+.nav-menu li:hover>a.nav-portfolio,
 .nav-menu a.nav-portfolio.active {
   background: var(--gradient-primary) !important;
   box-shadow: 0 0 20px rgba(66, 133, 244, 0.35), 0 0 20px rgba(234, 67, 53, 0.35) !important;
@@ -770,18 +778,18 @@ body.light-mode.mobile-nav-active .mobile-nav-toggle {
 .nav-menu a:hover span,
 .nav-menu .active span,
 .nav-menu .active:focus span,
-.nav-menu li:hover > a span {
+.nav-menu li:hover>a span {
   color: #fff;
 }
 
 .nav-menu a:hover,
-.nav-menu li:hover > a {
+.nav-menu li:hover>a {
   width: 100%;
   color: #fff;
 }
 
 .nav-menu a:hover span,
-.nav-menu li:hover > a span {
+.nav-menu li:hover>a span {
   display: block;
 }
 
@@ -993,9 +1001,17 @@ section {
 }
 
 @keyframes rainbowShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .section-title p {
@@ -1199,6 +1215,7 @@ article:hover {
   border-color: var(--google-blue);
   box-shadow: 0 5px 15px rgba(66, 133, 244, 0.35);
 }
+
 .container-frontend article:nth-child(odd):hover .experience-icon {
   filter: drop-shadow(0 0 8px rgba(66, 133, 244, 0.7));
 }
@@ -1207,6 +1224,7 @@ article:hover {
   border-color: var(--google-green);
   box-shadow: 0 5px 15px rgba(52, 168, 83, 0.35);
 }
+
 .container-frontend article:nth-child(even):hover .experience-icon {
   filter: drop-shadow(0 0 8px rgba(52, 168, 83, 0.7));
 }
@@ -1216,6 +1234,7 @@ article:hover {
   border-color: var(--google-yellow);
   box-shadow: 0 5px 15px rgba(251, 188, 5, 0.35);
 }
+
 .container-backend article:nth-child(odd):hover .experience-icon {
   filter: drop-shadow(0 0 8px rgba(251, 188, 5, 0.7));
 }
@@ -1224,6 +1243,7 @@ article:hover {
   border-color: var(--google-red);
   box-shadow: 0 5px 15px rgba(234, 67, 53, 0.35);
 }
+
 .container-backend article:nth-child(even):hover .experience-icon {
   filter: drop-shadow(0 0 8px rgba(234, 67, 53, 0.7));
 }
@@ -1269,12 +1289,15 @@ article h3 {
 .resume .col-lg-6:first-child .resume-title:first-of-type {
   border-left-color: var(--google-blue);
 }
+
 .resume .col-lg-6:first-child .resume-title:last-of-type {
   border-left-color: var(--google-yellow);
 }
+
 .resume .col-lg-6:last-child .resume-title:first-of-type {
   border-left-color: var(--google-red);
 }
+
 .resume .col-lg-6:last-child .resume-title:last-of-type {
   border-left-color: var(--google-green);
 }
@@ -1306,20 +1329,51 @@ article h3 {
 }
 
 /* Cycle timeline dot colors per item: Blue, Green, Yellow, Red */
-.resume .resume-item:nth-child(4n+1)::before { border-color: var(--google-blue); box-shadow: 0 0 10px rgba(66,133,244,0.5); }
-.resume .resume-item:nth-child(4n+2)::before { border-color: var(--google-green); box-shadow: 0 0 10px rgba(52,168,83,0.5); }
-.resume .resume-item:nth-child(4n+3)::before { border-color: var(--google-yellow); box-shadow: 0 0 10px rgba(251,188,5,0.5); }
-.resume .resume-item:nth-child(4n+4)::before { border-color: var(--google-red); box-shadow: 0 0 10px rgba(234,67,53,0.5); }
+.resume .resume-item:nth-child(4n+1)::before {
+  border-color: var(--google-blue);
+  box-shadow: 0 0 10px rgba(66, 133, 244, 0.5);
+}
+
+.resume .resume-item:nth-child(4n+2)::before {
+  border-color: var(--google-green);
+  box-shadow: 0 0 10px rgba(52, 168, 83, 0.5);
+}
+
+.resume .resume-item:nth-child(4n+3)::before {
+  border-color: var(--google-yellow);
+  box-shadow: 0 0 10px rgba(251, 188, 5, 0.5);
+}
+
+.resume .resume-item:nth-child(4n+4)::before {
+  border-color: var(--google-red);
+  box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
+}
 
 .resume .resume-item:hover::before {
   background: var(--google-blue);
   box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
   transform: scale(1.2);
 }
-.resume .resume-item:nth-child(4n+1):hover::before { background: var(--google-blue); box-shadow: 0 0 20px rgba(66,133,244,0.8); }
-.resume .resume-item:nth-child(4n+2):hover::before { background: var(--google-green); box-shadow: 0 0 20px rgba(52,168,83,0.8); }
-.resume .resume-item:nth-child(4n+3):hover::before { background: var(--google-yellow); box-shadow: 0 0 20px rgba(251,188,5,0.8); }
-.resume .resume-item:nth-child(4n+4):hover::before { background: var(--google-red); box-shadow: 0 0 20px rgba(234,67,53,0.8); }
+
+.resume .resume-item:nth-child(4n+1):hover::before {
+  background: var(--google-blue);
+  box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
+}
+
+.resume .resume-item:nth-child(4n+2):hover::before {
+  background: var(--google-green);
+  box-shadow: 0 0 20px rgba(52, 168, 83, 0.8);
+}
+
+.resume .resume-item:nth-child(4n+3):hover::before {
+  background: var(--google-yellow);
+  box-shadow: 0 0 20px rgba(251, 188, 5, 0.8);
+}
+
+.resume .resume-item:nth-child(4n+4):hover::before {
+  background: var(--google-red);
+  box-shadow: 0 0 20px rgba(234, 67, 53, 0.8);
+}
 
 .resume .resume-item h4 {
   font-family: var(--font-heading);
@@ -1343,10 +1397,29 @@ article h3 {
 }
 
 /* Cycle date badge colors per item */
-.resume .resume-item:nth-child(4n+1) h5 { color: var(--google-blue); background: rgba(66,133,244,0.1); border-color: rgba(66,133,244,0.25); }
-.resume .resume-item:nth-child(4n+2) h5 { color: var(--google-green); background: rgba(52,168,83,0.1); border-color: rgba(52,168,83,0.25); }
-.resume .resume-item:nth-child(4n+3) h5 { color: var(--google-yellow); background: rgba(251,188,5,0.1); border-color: rgba(251,188,5,0.25); }
-.resume .resume-item:nth-child(4n+4) h5 { color: var(--google-red); background: rgba(234,67,53,0.1); border-color: rgba(234,67,53,0.25); }
+.resume .resume-item:nth-child(4n+1) h5 {
+  color: var(--google-blue);
+  background: rgba(66, 133, 244, 0.1);
+  border-color: rgba(66, 133, 244, 0.25);
+}
+
+.resume .resume-item:nth-child(4n+2) h5 {
+  color: var(--google-green);
+  background: rgba(52, 168, 83, 0.1);
+  border-color: rgba(52, 168, 83, 0.25);
+}
+
+.resume .resume-item:nth-child(4n+3) h5 {
+  color: var(--google-yellow);
+  background: rgba(251, 188, 5, 0.1);
+  border-color: rgba(251, 188, 5, 0.25);
+}
+
+.resume .resume-item:nth-child(4n+4) h5 {
+  color: var(--google-red);
+  background: rgba(234, 67, 53, 0.1);
+  border-color: rgba(234, 67, 53, 0.25);
+}
 
 .resume .resume-item p {
   color: var(--text-secondary);
@@ -1517,16 +1590,19 @@ article h3 {
   border-color: var(--google-blue);
   box-shadow: 0 15px 30px rgba(66, 133, 244, 0.3);
 }
+
 .portfolio .portfolio-item:nth-child(4n+2) .portfolio-wrap:hover {
   transform: translateY(-8px);
   border-color: var(--google-red);
   box-shadow: 0 15px 30px rgba(234, 67, 53, 0.3);
 }
+
 .portfolio .portfolio-item:nth-child(4n+3) .portfolio-wrap:hover {
   transform: translateY(-8px);
   border-color: var(--google-yellow);
   box-shadow: 0 15px 30px rgba(251, 188, 5, 0.3);
 }
+
 .portfolio .portfolio-item:nth-child(4n+4) .portfolio-wrap:hover {
   transform: translateY(-8px);
   border-color: var(--google-green);
